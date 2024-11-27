@@ -1,0 +1,15 @@
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: systerel
+      url-base: https://gitlab.com/systerel
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v4.0.0
+      import: true
+    - name: S2OPC
+      remote: systerel
+      revision: master
+      path: modules/S2OPC
