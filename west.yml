@@ -13,3 +13,4 @@ manifest:
       remote: systerel
       revision: master
       path: modules/S2OPC
+  group-filter: [-babblesim,-tee,-hal]
