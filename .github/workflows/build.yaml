@@ -20,6 +20,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: workspace/app
+      - uses: actions/cache@v4
+        with:
+          path: |
+            workspace/bootloader
+            workspace/modules
+            workspace/tools
+            workspace/zephyr
+          key: ${{ runner.os }}-${{ hashFiles('workspace/app/west.yml') }}
       - working-directory: workspace
         run: |
           west init --local app
