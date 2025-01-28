@@ -20,6 +20,9 @@ jobs:
           #        GitHub comes up with a fundamental fix for this problem.
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
       - run: |
           git diff -U0 --no-color --relative origin/${{ github.event.pull_request.base.ref }} -- | clang-format-diff-16 -p 1 -style=file -i
       - name: Suggest Changes Action
