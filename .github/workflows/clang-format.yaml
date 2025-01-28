@@ -21,6 +21,6 @@ jobs:
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
       - uses: actions/checkout@v4
       - run: |
-          git diff -U0 --no-color --relative  ${{ github.event.pull_request.base.ref }} -- | clang-format-diff-16 -p 1 -style=file -i
+          git diff -U0 --no-color --relative origin/${{ github.event.pull_request.base.ref }} -- | clang-format-diff-16 -p 1 -style=file -i
       - name: Suggest Changes Action
         uses: parkerbxyz/suggest-changes@v2.0.0
