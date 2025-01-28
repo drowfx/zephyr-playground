@@ -1,9 +1,10 @@
 name: Build code
 
 on:
+  pull_request:
   push:
     branches:
-      - github-actions-testing
+      - main
 
 jobs:
   build:
