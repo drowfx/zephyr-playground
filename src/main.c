@@ -113,7 +113,7 @@ static bool setup_pub(SOPC_PubSubConfiguration **pubSubConfig, SOPC_PubSourceVar
         goto fail;
     }
 
-    if (!SOPC_PubSubConnection_Set_Address(conn, "opc.eth://53-66-77-88-99-AA" /* "opc.udp://192.168.10.1:4840" */)) {
+    if (!SOPC_PubSubConnection_Set_Address(conn, "opc.udp://192.168.10.1:4840")) {
         printf("failed to set PubSubConnection address\n");
         goto fail;
     }
